@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            *
+            {
+                padding:0;
+                margin: 0;
+                list-style-type:none;
+            }
+            ul li
+            {
+                float: left;
+                position: relative;
+                padding: 10px;
+                cursor: pointer;
+            }
+            ul li:hover
+            {
+                background-color: skyblue;
+                color: white;
+            }
+            ul li::before
+            {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 0;
+                height: 100%;
+                border-bottom: 2px solid deeppink;
+                transition: 0.2s linear;
+            }
+            ul li:hover::before
+            {
+                width: 100%;
+                left: 0;
+            }
+            li:hover ~ li::before
+            {
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>我是一</li>
+            <li>我是二</li>
+            <li>我是三</li>
+            <li>我是四</li>
+            <li>我是五</li>
+        </ul>
+    </body>
+</html>

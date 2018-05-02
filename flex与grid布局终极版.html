@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #container
+        {
+            width: 80%;
+            margin: 10px auto;
+            display: grid;
+            grid-row-gap: 25px;
+            grid-column-gap: 10px;
+            grid-template-rows: 50px 200px 100px 100px 200px 50px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+            "header header header"
+            "hero main main"
+            "sidebar main main"
+            "sidebar extra extra"
+            "related related relatepoint"
+            "footer footer footer"
+        }
+
+
+        header
+        {
+            background-color: darkorchid;
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav , header nav ul
+        {
+            height: 100%;
+        }
+        header nav ul li
+        {
+            float: left;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1em;
+            font-weight: bolder;
+            line-height: 50px;
+            padding: 0 10px;
+        }
+        header nav ul li:hover
+        {
+            background-color: aqua;
+            color: white;
+            transition: 0.3s ease;
+        }
+        header input[type = "text"]
+        {
+            margin-right: 60px;
+        }
+        header button
+        {
+            width:75px;
+            height: 35px;
+            border-radius: 10px;
+            margin-right: 40px;
+            cursor: pointer;
+            outline: none;
+            background-color: springgreen; 
+            font-weight: bold;
+        }
+
+
+        #hero
+        {
+            background-color:darkorange;
+            grid-area: hero;
+        }
+        aside
+        {
+            background-color:darkolivegreen;
+            grid-area: sidebar;
+        }
+        section
+        {
+            background-color:darkgoldenrod;
+            grid-area: main;
+        }
+        #extra
+        {
+            background-color:darkcyan;
+            grid-area: extra;
+        }
+        #related
+        {
+            background-color:crimson;
+            grid-area: related;
+        }
+        #relatepoint
+        {
+            background-color:cadetblue;
+            grid-area: relatepoint;
+        }
+        footer
+        {
+            background-color:aqua;
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+            <ul>
+                <li>About</li>
+                <li>Linking</li>
+                <li>Web</li>
+            </ul>
+            </nav>
+            <input type="text" placeholder="请输入搜索内容..">
+            <button id="btn1">Login</button>
+        </header>
+        <div id="hero"></div>
+        <aside></aside>
+        <section></section>
+        <div id="extra"></div>
+        <div id="related"></div>
+        <div id="relatepoint"></div>
+        <footer></footer>
+        <script>
+            var btn1 = document.getElementById("btn1");
+            btn1.onmousedown = function(){
+                btn1.style.paddingLeft = 3 + "px";
+                btn1.style.paddingTop = 3 + "px";
+                btn1.style.color = "green";
+            };
+            btn1.onmouseup = function(){
+                btn1.style.paddingLeft = 0 + "px";
+                btn1.style.paddingTop = 0 + "px";
+                btn1.style.color = "black";
+            };
+        </script>
+    </div>
+</body>
+</html>
